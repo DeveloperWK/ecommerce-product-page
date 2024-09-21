@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="_dist/stylesheet.min.css" />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="container">
+      <nav>
+        <div class="left__headerSide">
+          <img src="images/icon-menu.svg" alt="hamburger_menu" />
+          <img src="images/logo.svg" alt="logo" />
+        </div>
+        <div class="right__headerSide">
+          <img src="images/icon-cart.svg" alt="cart" />
+          <img src="images/image-avatar.png" alt="avatar" />
+        </div>
+      </nav>
+    </header>
+    <!-- Header End -->
+    <!-- product Start -->
+    <section class="product__slider">
+      <img
+        src="images/image-product-1.jpg"
+        class="product__image"
+        alt="product1"
+      />
+      <a href="#" class="product__link product__previous"
+        ><i class="fa-solid fa-angle-left"></i
+      ></a>
+      <a href="#" class="product__link product__next"
+        ><i class="fa-solid fa-angle-right"></i
+      ></a>
+    </section>
+    <!-- product End -->
+    <!-- product details Start -->
+    <section class="container product__details">
+      <p class="product__brand">Sneaker Company</p>
+      <h1 class="product__title">Fall Limited Edition Sneakers</h1>
+      <p class="product__description">
+        These low-profile sneakers are your perfect casual wear companion.
+        Featuring a durable rubber outer sole, they’ll withstand everything the
+        weather can offer.
+      </p>
+      <div class="product__price">
+        <p class="discounted__price">$125.00</p>
+        <p class="discount__percentage">50%</p>
+        <p class="full__price">$250.00</p>
+      </div>
+      <div class="product__quantity">
+        <div class="quantity__buttons">
+          <button class="quantity__button">-</button>
+          <p class="quantity__number">0</p>
+          <button class="quantity__button">+</button>
+        </div>
+      </div>
+      <button class="product__button"><i class="fa-solid fa-cart-plus"></i>Add to cart</button>
+    </section>
+    <!-- product details End -->
+  </body>
+</html>

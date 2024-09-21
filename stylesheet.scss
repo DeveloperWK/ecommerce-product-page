@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+$orange: hsl(26, 100%, 55%);
+$pale-orange: hsl(25, 100%, 94%);
+@mixin font($weight) {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: $weight;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// Container styles Start
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+// Container styles End
+// Header styles Start
+header {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    .left__headerSide {
+      display: flex;
+      align-items: center;
+      width: 60%;
+      gap: 1rem;
+      justify-content: flex-start;
+      img {
+        height: 1.3rem;
+      }
+    }
+    .right__headerSide {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 40%;
+      justify-content: flex-end;
+
+      img {
+        width: 1.5rem;
+      }
+    }
+  }
+}
+
+// Header styles End
+// product styles Start
+.product__slider {
+  position: relative;
+  .product__image {
+    width: 100%;
+  }
+  .product__link {
+    background-color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: purple;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+  .product__previous {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+  }
+  .product__next {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+  }
+}
+// product styles End
+// hero styles Start
+.product__details {
+  .product__brand {
+    @include font(700);
+    color: #b0b4b7;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    padding-bottom: 1rem;
+  }
+  .product__title {
+    font-size: 2rem;
+    @include font(700);
+    padding-bottom: 1rem;
+  }
+  .product__description {
+    color: #b0b4b7;
+    @include font(400);
+    line-height: 1.5rem;
+    word-wrap: normal;
+    padding-bottom: 1rem;
+  }
+  .product__price {
+    display: flex;
+    align-items: center;
+    padding-bottom: 3rem;
+    .discounted__price {
+      @include font(700);
+      font-size: 1.8rem;
+    }
+    .discount__percentage {
+      @include font(700);
+      background-color: black;
+      color: white;
+      padding: 0.3rem 0.7rem;
+      border-radius: 0.5rem;
+      margin: 0 1rem;
+    }
+    .full__price {
+      @include font(700);
+      color: #b0b4b7;
+      text-decoration: line-through;
+      transform: translateX(100%);
+    }
+  }
+  .product__quantity {
+    padding-bottom: 1.5rem;
+  }
+  .quantity__buttons {
+    display: flex;
+    justify-content: space-between;
+    .quantity__number {
+      font-size: 1.5rem;
+      @include font(700);
+    }
+    .quantity__button {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      @include font(700);
+      cursor: pointer;
+      color: $orange;
+    }
+  }
+  .product__button {
+    width: 100%;
+    height: 3.5rem;
+    border: none;
+    background-color: $orange;
+    font-size: 1rem;
+    @include font(700);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0px 0px 36px $orange;
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
+    i {
+      padding-right: 0.5rem;
+    }
+  }
+}
+// hero styles End
