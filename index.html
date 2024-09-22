@@ -17,15 +17,44 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="_dist/stylesheet.min.css" />
+    <link rel="stylesheet" href="css/stylesheet.min.css" />
+    <link rel="stylesheet" href="css/responsive.min.css" />
   </head>
   <body>
     <!-- Header Start -->
-    <header class="container">
+    <header class="container hamburger__overlay">
       <nav>
         <div class="left__headerSide">
           <img src="images/icon-menu.svg" alt="hamburger_menu" />
           <img src="images/logo.svg" alt="logo" />
+          <ul class="desktop__nav hamburger__nav">
+            <li><a href="#" class="hamburger__nav--cross">&times</a></li>
+            <li class="desktop__nav--item hamburger__nav--item">
+              <a href="#" class="desktop__nav--link hamburger__nav--link"
+                >Collections</a
+              >
+            </li>
+            <li class="desktop__nav--item hamburger__nav--item">
+              <a href="#" class="desktop__nav--link hamburger__nav--link"
+                >Men</a
+              >
+            </li>
+            <li class="desktop__nav--item hamburger__nav--item">
+              <a href="#" class="desktop__nav--link hamburger__nav--link"
+                >Women</a
+              >
+            </li>
+            <li class="desktop__nav--item hamburger__nav--item">
+              <a href="#" class="desktop__nav--link hamburger__nav--link"
+                >About</a
+              >
+            </li>
+            <li class="desktop__nav--item hamburger__nav--item">
+              <a href="#" class="desktop__nav--link hamburger__nav--link"
+                >Contact</a
+              >
+            </li>
+          </ul>
         </div>
         <div class="right__headerSide">
           <img src="images/icon-cart.svg" alt="cart" />
@@ -35,43 +64,71 @@
     </header>
     <!-- Header End -->
     <!-- product Start -->
-    <section class="product__slider">
-      <img
-        src="images/image-product-1.jpg"
-        class="product__image"
-        alt="product1"
-      />
-      <a href="#" class="product__link product__previous"
-        ><i class="fa-solid fa-angle-left"></i
-      ></a>
-      <a href="#" class="product__link product__next"
-        ><i class="fa-solid fa-angle-right"></i
-      ></a>
-    </section>
-    <!-- product End -->
-    <!-- product details Start -->
-    <section class="container product__details">
-      <p class="product__brand">Sneaker Company</p>
-      <h1 class="product__title">Fall Limited Edition Sneakers</h1>
-      <p class="product__description">
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they’ll withstand everything the
-        weather can offer.
-      </p>
-      <div class="product__price">
-        <p class="discounted__price">$125.00</p>
-        <p class="discount__percentage">50%</p>
-        <p class="full__price">$250.00</p>
-      </div>
-      <div class="product__quantity">
-        <div class="quantity__buttons">
-          <button class="quantity__button">-</button>
-          <p class="quantity__number">0</p>
-          <button class="quantity__button">+</button>
+    <main class="desktop">
+      <section class="product__slider">
+        <img
+          src="images/image-product-1.jpg"
+          class="product__image"
+          alt="product1"
+        />
+        <a href="#" class="product__link product__previous"
+          ><i class="fa-solid fa-angle-left"></i
+        ></a>
+        <a href="#" class="product__link product__next"
+          ><i class="fa-solid fa-angle-right"></i
+        ></a>
+        <div class="product__slider--images">
+          <img
+            src="images/image-product-1-thumbnail.jpg"
+            class="product__slider--image"
+            alt="slider image"
+          />
+          <img
+            src="images/image-product-2-thumbnail.jpg"
+            class="product__slider--image"
+            alt="slider image"
+          />
+          <img
+            src="images/image-product-3-thumbnail.jpg"
+            class="product__slider--image"
+            alt="slider image"
+          />
+          <img
+            src="images/image-product-4-thumbnail.jpg"
+            class="product__slider--image"
+            alt="slider image"
+          />
         </div>
-      </div>
-      <button class="product__button"><i class="fa-solid fa-cart-plus"></i>Add to cart</button>
-    </section>
-    <!-- product details End -->
+      </section>
+      <!-- product End -->
+      <!-- product details Start -->
+      <section class="container product__details">
+        <p class="product__brand">Sneaker Company</p>
+        <h1 class="product__title">Fall Limited Edition Sneakers</h1>
+        <p class="product__description">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <div class="product__price">
+          <p class="discounted__price">$125.00</p>
+          <p class="discount__percentage">50%</p>
+          <p class="full__price">$250.00</p>
+        </div>
+        <div class="product__btn__quantity">
+          <div class="product__quantity">
+            <div class="quantity__buttons">
+              <button class="quantity__button">-</button>
+              <p class="quantity__number">0</p>
+              <button class="quantity__button">+</button>
+            </div>
+          </div>
+          <button class="product__button">
+            <i class="fa-solid fa-cart-plus"></i>Add to cart
+          </button>
+        </div>
+      </section>
+      <!-- product details End -->
+    </main>
   </body>
 </html>
