@@ -69,29 +69,37 @@ var imgSlide = function (smallImg) {
     if (smallImg.id == "1") {
         slider.src = "images/image-product-1.jpg";
         smallImg.style.opacity = "0.5";
+        smallImg.style.outline = "5px solid hsl(26, 100%, 55%)";
         setTimeout(function () {
             smallImg.style.opacity = "1";
+            smallImg.style.outline = "none";
         }, 1000);
     }
     else if (smallImg.id == "2") {
         slider.src = "images/image-product-2.jpg";
         smallImg.style.opacity = "0.5";
+        smallImg.style.outline = "5px solid hsl(26, 100%, 55%)";
         setTimeout(function () {
             smallImg.style.opacity = "1";
+            smallImg.style.outline = "none";
         }, 1000);
     }
     else if (smallImg.id == "3") {
         slider.src = "images/image-product-3.jpg";
         smallImg.style.opacity = "0.5";
+        smallImg.style.outline = "5px solid hsl(26, 100%, 55%)";
         setTimeout(function () {
             smallImg.style.opacity = "1";
+            smallImg.style.outline = "none";
         }, 1000);
     }
     else if (smallImg.id == "4") {
         slider.src = "images/image-product-4.jpg";
         smallImg.style.opacity = "0.5";
+        smallImg.style.outline = "5px solid hsl(26, 100%, 55%)";
         setTimeout(function () {
             smallImg.style.opacity = "1";
+            smallImg.style.outline = "none";
         }, 1000);
     }
 };
