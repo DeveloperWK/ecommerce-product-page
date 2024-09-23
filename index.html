@@ -19,16 +19,53 @@
     />
     <link rel="stylesheet" href="css/stylesheet.min.css" />
     <link rel="stylesheet" href="css/responsive.min.css" />
+    <script src="js/main.js" defer></script>
   </head>
   <body>
     <!-- Header Start -->
     <header class="container hamburger__overlay">
       <nav>
         <div class="left__headerSide">
-          <img src="images/icon-menu.svg" alt="hamburger_menu" />
+          <img
+            src="images/icon-menu.svg"
+            alt="hamburger_menu"
+            class="hamburger"
+            onclick="mobileNav()"
+          />
           <img src="images/logo.svg" alt="logo" />
-          <ul class="desktop__nav hamburger__nav">
-            <li><a href="#" class="hamburger__nav--cross">&times</a></li>
+          <!-- mobile view  menu start -->
+          <div class="hamburger__nav">
+            <ul class="hamburger__nav--list">
+              <li>
+                <a href="#" class="hamburger__nav--cross" onclick="menuClose()"
+                  >&times</a
+                >
+              </li>
+              <li class="hamburger__nav--item collection">
+                <a href="#" class="hamburger__nav--link">Collections</a>
+              </li>
+              <li class="hamburger__nav--item">
+                <a href="#" class="hamburger__nav--link">Men</a>
+              </li>
+              <li class="hamburger__nav--item">
+                <a href="#" class="hamburger__nav--link">Women</a>
+              </li>
+              <li class="hamburger__nav--item">
+                <a href="#" class="hamburger__nav--link">About</a>
+              </li>
+              <li class="hamburger__nav--item">
+                <a href="#" class="hamburger__nav--link">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <!-- mobile view  menu end -->
+          <!-- desktop view  menu start -->
+          <ul class="desktop__nav">
+            <li>
+              <a href="#" class="hamburger__nav--cross" onclick="menuClose()"
+                >&times</a
+              >
+            </li>
             <li class="desktop__nav--item hamburger__nav--item">
               <a href="#" class="desktop__nav--link hamburger__nav--link"
                 >Collections</a
@@ -55,13 +92,38 @@
               >
             </li>
           </ul>
+          <!-- desktop view  menu start -->
         </div>
         <div class="right__headerSide">
-          <img src="images/icon-cart.svg" alt="cart" />
+          <img
+            src="images/icon-cart.svg"
+            alt="cart"
+            class="cartBtn"
+            onclick="cartClick()"
+          />
+          <p class="cart__count">1</p>
           <img src="images/image-avatar.png" alt="avatar" />
         </div>
       </nav>
     </header>
+    <!-- Cart Start -->
+    <div class="cart">
+      <h1 class="cart__title">Cart</h1>
+      <div class="cart__details">
+        <div class="cart__img">
+          <img src="images/image-product-1-thumbnail.jpg" alt="cart_img" />
+        </div>
+        <div class="cart__content">
+          <p>Fall Limited Edition Sneakers</p>
+          <p>$125.00 x 3 <span class="cart__price--total">$375.00</span></p>
+        </div>
+        <div class="delete">
+          <img src="images/icon-delete.svg" alt="delete" />
+        </div>
+      </div>
+      <button type="submit" class="cart__btn">Checkout</button>
+    </div>
+    <!-- Cart End -->
     <!-- Header End -->
     <!-- product Start -->
     <main class="desktop">
@@ -71,30 +133,38 @@
           class="product__image"
           alt="product1"
         />
-        <a href="#" class="product__link product__previous"
+        <a href="#" class="product__link product__previous" onclick="prevImg()"
           ><i class="fa-solid fa-angle-left"></i
         ></a>
-        <a href="#" class="product__link product__next"
+        <a href="#" class="product__link product__next" onclick="nextImg()"
           ><i class="fa-solid fa-angle-right"></i
         ></a>
         <div class="product__slider--images">
           <img
             src="images/image-product-1-thumbnail.jpg"
+            onclick="imgSlide(this)"
+            id="1"
             class="product__slider--image"
             alt="slider image"
           />
           <img
             src="images/image-product-2-thumbnail.jpg"
+            onclick="imgSlide(this)"
+            id="2"
             class="product__slider--image"
             alt="slider image"
           />
           <img
             src="images/image-product-3-thumbnail.jpg"
+            onclick="imgSlide(this)"
+            id="3"
             class="product__slider--image"
             alt="slider image"
           />
           <img
             src="images/image-product-4-thumbnail.jpg"
+            onclick="imgSlide(this)"
+            id="4"
             class="product__slider--image"
             alt="slider image"
           />
@@ -118,9 +188,13 @@
         <div class="product__btn__quantity">
           <div class="product__quantity">
             <div class="quantity__buttons">
-              <button class="quantity__button">-</button>
+              <button class="quantity__button minus" onclick="decrease()">
+                -
+              </button>
               <p class="quantity__number">0</p>
-              <button class="quantity__button">+</button>
+              <button class="quantity__button plus" onclick="increase()">
+                +
+              </button>
             </div>
           </div>
           <button class="product__button">
@@ -130,5 +204,13 @@
       </section>
       <!-- product details End -->
     </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">DEVELOPER.WK</a>.
+      </div>
+    </footer>
   </body>
 </html>

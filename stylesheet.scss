@@ -25,7 +25,7 @@ html {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem 2.4rem;
 }
 // Container styles End
 // hamburger__overlay styles Start
@@ -50,30 +50,35 @@ header {
       img {
         height: 1.3rem;
       }
-      // .desktop__nav {
-      //   display: flex;
-      //   margin-left: 1.5rem;
-      //   .desktop__nav--item {
-      //     padding-right: 1.5rem;
-      //     .desktop__nav--link {
-      //       color: gray;
-      //       @include font(400);
-      //       font-size: 1.1rem;
-      //       &:hover {
-      //         color: $orange;
-      //       }
-      //     }
-      //   }
-      // }
+      .desktop__nav {
+        display: none;
+        margin-left: 1.5rem;
+        .desktop__nav--item {
+          padding-right: 1.5rem;
+          .desktop__nav--link {
+            color: gray;
+            @include font(400);
+            font-size: 1.1rem;
+            &:hover {
+              color: $orange;
+            }
+          }
+        }
+      }
       .hamburger__nav {
         height: 100vh;
-        width: calc(100% - 50%);
+        width: 0;
+        visibility: hidden;
         background-color: white;
         position: absolute;
         top: 0;
         left: 0;
+        overflow-x: hidden;
         z-index: 1;
-        padding: 3.5rem 2rem;
+
+        .hamburger__nav--list {
+          margin-top: 4rem;
+        }
         .hamburger__nav--cross {
           position: absolute;
           top: 0.8rem;
@@ -81,6 +86,7 @@ header {
           cursor: pointer;
           font-size: 2rem;
           color: black;
+          transition: all 0.5s ease-in-out;
           transform: translateX(120%);
           &:hover {
             color: $orange;
@@ -93,6 +99,8 @@ header {
             color: black;
             @include font(400);
             font-size: 1.1rem;
+            transition: all 0.5s ease-in-out;
+            margin-left: 1.8rem;
             &:hover {
               color: $orange;
             }
@@ -100,13 +108,28 @@ header {
         }
       }
     }
+
     .right__headerSide {
       display: flex;
       align-items: center;
       gap: 1rem;
       width: 40%;
+      position: relative;
       justify-content: flex-end;
-
+      .cart__count {
+        position: absolute;
+        top: -11px;
+        right: 30px;
+        background-color: $orange;
+        color: white;
+        width: 1rem;
+        height: 1rem;
+        padding: 1px 12px;
+        border-radius: 0.9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       img {
         width: 1.5rem;
       }
@@ -196,7 +219,7 @@ header {
       @include font(700);
       color: #b0b4b7;
       text-decoration: line-through;
-      transform: translateX(100%);
+      transform: translateX(80%);
     }
   }
   .product__quantity {
@@ -238,3 +261,88 @@ header {
   }
 }
 // hero styles End
+// Cart styles Start
+.cart__active {
+  visibility: visible !important;
+  width: 350px !important;
+}
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+  width: 0;
+  height: 300px;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 2rem;
+  position: absolute;
+  z-index: 1;
+  top: 60px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  right: 10px;
+  visibility: hidden;
+  .cart__title {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.432);
+    @include font(700);
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  .cart__details {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    .cart__img {
+      width: 20%;
+
+      img {
+        width: 100%;
+        border-radius: 0.5rem;
+      }
+    }
+    .cart__content {
+      width: 70%;
+      p:nth-of-type(1) {
+        color: #b0b4b7;
+        @include font(700);
+        text-transform: capitalize;
+        font-size: 0.9rem;
+        padding-left: 1rem;
+        padding-bottom: 0.5rem;
+      }
+      p:nth-of-type(2) {
+        @include font(400);
+        color: #b0b4b7;
+        font-size: 1.1rem;
+        padding-left: 1rem;
+      }
+      .cart__price--total {
+        @include font(700);
+        font-size: 1.1rem;
+        color: black;
+      }
+    }
+    img[alt="delete"] {
+      width: 1rem;
+    }
+  }
+  .cart__btn {
+    height: 3.5rem;
+    color: black;
+    @include font(700);
+    font-size: 1.5rem;
+    background-color: $orange;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+  .delete {
+    width: 1rem;
+  }
+}
+// Cart styles End
+footer {
+  text-align: center;
+  margin-bottom: 1rem;
+}
